@@ -19,31 +19,44 @@
         <div class="mt-4">
             <h4>Intéressé par ce bien ?</h4>
 
-            <form action="" method="post" class="vstack gap-3">
+            <form action="{{ route('property.contact', $property) }}" method="post" class="vstack gap-3">
                 @csrf
                 <div class="row">
                     @include('shared.input', [
                         'class' => 'col',
                         'name' => 'firstname',
                         'label' => 'Prénom',
+                        'value' => 'John',
                     ])
-                    @include('shared.input', ['class' => 'col', 'name' => 'lastname', 'label' => 'Nom'])
+                    @include('shared.input', [
+                        'class' => 'col',
+                        'name' => 'lastname',
+                        'label' => 'Nom',
+                        'value' => 'Doe',
+                    ])
                 </div>
                 <div class="row">
-                    @include('shared.input', ['class' => 'col', 'name' => 'phone', 'label' => 'Téléphone'])
+                    @include('shared.input', [
+                        'class' => 'col',
+                        'name' => 'phone',
+                        'label' => 'Téléphone',
+                        'value' => '06 00 00 00 00',
+                    ])
                     @include('shared.input', [
                         'type' => 'email',
                         'class' => 'col',
-                        'name' => 'mail',
+                        'name' => 'email',
                         'label' => 'Email',
+                        'value' => 'John@doepublic.fr',
                     ])
                 </div>
                 @include('shared.input', [
                     'type',
                     'textarea',
                     'class' => 'col',
-                    'name' => 'lastname',
-                    'label' => 'Nom',
+                    'name' => 'message',
+                    'label' => 'Message',
+                    'value' => 'Mon petit message',
                 ])
 
                 <button class="btn btn-primary">Nous contacter</button>

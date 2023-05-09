@@ -53,6 +53,9 @@
         </div>
     </nav>
 
+    <div class="container">
+        @include('shared.flash')
+    </div>
     @yield('content')
 </body>
 

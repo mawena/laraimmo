@@ -1,0 +1,11 @@
+Video : Tp : Immo grafikart laravel
+Video04 : Demande de contact
+
+
+                        /Notes importantes:
+#Laravel nous permet d'envoyer un mail sous format texte ou sous format html;
+    #On peut utiliser un markdown pour générer le format html également;
+
+                        /Mots clés:
+-php artisan make:mail <Class_name> : générer un fichier de gestion de mail;
+    #--markdown=<email_template_path> : générer à partir d'un email template;
