@@ -20,7 +20,7 @@ return new class extends Migration {
             $table->integer('floor');
             $table->integer('price');
             $table->string('city');
-            $table->string('adress');
+            $table->string('address');
             $table->string('postal_code');
             $table->boolean('sold');
             $table->timestamps();

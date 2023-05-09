@@ -3,7 +3,7 @@ Video01 : Gestion des biens
 
 
                         /Notes importantes:
-#
+#Pour utiliser bootstrap pour la pagination il faut aller l'activer dans le fichier appServiceProvider en faisant appel à la méthode useBootstrapFive() de la classe Paginator dans la méthode boot() de la classe appServiceProvider;
 
                         /Mots clés:
 -
