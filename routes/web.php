@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\OptionController;
 use App\Http\Controllers\Admin\PropertyController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,11 +16,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+$idRegex = '[0-9]+';
+$slugRegex = '[0-9a-z\-]+';
+
+Route::get('/', [HomeController::class, 'index'])->name('index');
+
+Route::get("/biens", [\App\Http\Controllers\PropertyController::class, 'index'])->name("property.index");
+Route::get("/biens/{slug}-{property}", [\App\Http\Controllers\PropertyController::class, 'show'])->where(
+    [
+        "property" => $idRegex,
+        "slug" => $slugRegex
+    ]
+)->name("property.show");
 
 Route::prefix("admin")->name("admin.")->group(function () {
-    Route::resource('property', PropertyController::class)->except(["show"]);
+    Route::resource('property', \App\Http\Controllers\Admin\PropertyController::class)->except(["show"]);
     Route::resource('option', OptionController::class)->except(["show"]);
 });

@@ -17,11 +17,13 @@
                 'value' => $property->title,
             ])
             @include('shared.input', [
+                'type' => 'number',
                 'class' => 'col',
                 'name' => 'surface',
                 'value' => $property->surface,
             ])
             @include('shared.input', [
+                'type' => 'number',
                 'class' => 'col',
                 'name' => 'price',
                 'value' => $property->price,
@@ -36,6 +38,7 @@
 
         <div class="row">
             @include('shared.input', [
+                'type' => 'number',
                 'class' => 'col',
                 'name' => 'rooms',
                 'label' => 'Pièces',
@@ -43,6 +46,7 @@
             ])
 
             @include('shared.input', [
+                'type' => 'number',
                 'class' => 'col',
                 'name' => 'bedrooms',
                 'label' => 'Chambres',
@@ -50,6 +54,7 @@
             ])
 
             @include('shared.input', [
+                'type' => 'number',
                 'class' => 'col',
                 'name' => 'floor',
                 'label' => 'Etage',
