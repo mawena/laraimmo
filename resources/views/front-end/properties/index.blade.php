@@ -3,7 +3,7 @@
 @section('title', 'Tous nos biens')
 
 @section('content')
-
+    @include('shared.flash')
     <div class="gb-light p-5 mb-5 text-center">
         <form action="" method="get" class="container d-flex gap-2">
             <input type="number" placeholder="Surface minimum" class="form-control" name="surface"

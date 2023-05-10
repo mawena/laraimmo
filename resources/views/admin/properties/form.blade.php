@@ -4,6 +4,7 @@
 
 @section('content')
     <h1>@yield('title')</h1>
+    @include('shared.flash')
     <form class="vstack gap-2"
         action="{{ route($property->exists ? 'admin.property.update' : 'admin.property.store', $property) }}" method="POST">
 

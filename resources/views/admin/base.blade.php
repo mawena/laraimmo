@@ -9,6 +9,13 @@
     <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.bootstrap5.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
     <title>@yield('title') | Administration</title>
+    <style>
+        @layer reset {
+            button {
+                all: unset;
+            }
+        }
+    </style>
 </head>
 
 @php
@@ -42,28 +49,31 @@
                         </a>
                     </li>
                 </ul>
-                {{-- <div class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    @auth
-                        {{ \Illuminate\Support\Facades\Auth::user()->name }}
-                        <form class="nav-item" action="{{ route('auth.logout') }}" method="post">
-                            @method('delete')
-                            @csrf
-                            <button class="nav-link">Se deconnecter</button>
-                        </form>
-                    @endauth
+            </div>
+            <div class="ms-auto">
+                @auth
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            {{-- {{ \Illuminate\Support\Facades\Auth::user()->name }} --}}
+                            <form action="{{ route('logout') }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button class="nav-link">Se deconnecter</button>
+                            </form>
+                        @endauth
 
-                    @guest
-                        <div class="nav-item">
-                            <a class="nav-link" href="{{ route('auth.login') }}">Se connecter</a>
-                        </div>
-                    @endguest
-                </div> --}}
+                        @guest
+                            <div class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">Se connecter</a>
+                            </div>
+                        @endguest
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
     <div class="container mt-5">
-        @include('shared.flash')
         @yield('content')
     </div>
     <script>
